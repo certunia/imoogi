@@ -4,9 +4,7 @@ import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-const port = process.env;
-
-console.log(port.PORT)
+const port = process.env.PORT;
 
 export default () => {
   return defineConfig({
@@ -14,8 +12,8 @@ export default () => {
       react(),
     ],
     server: {
-      port: port.PORT,
-      // https: true
+      port: port,
+      https: true
     },
   });
 }
