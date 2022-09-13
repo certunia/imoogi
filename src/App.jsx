@@ -5,6 +5,7 @@ import './App.css'
 function App() {
   const [cocktails, setCocktails] = useState([])
   const [nasa, setNasa] = useState(null)
+  const [imoogi, setImoogi] = useState(null)
 
   function getCocktails() {
     api('get', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
@@ -18,6 +19,14 @@ function App() {
     api('get', 'https://api.nasa.gov/planetary/apod?api_key=8QM0zVNIDDypMrk0hJtowNpwFalxPWnRU5EZ9cj0')
       .then(data => {
         setNasa(data);
+        console.log(data);
+      });
+  }
+
+  function getImoogi() {
+    api('get', 'https://fastapi-production-b52e.up.railway.app/')
+      .then(data => {
+        setImoogi(data);
         console.log(data);
       });
   }
@@ -55,6 +64,19 @@ function App() {
           </div>
 
           { nasa ? <img className="response_img" src={nasa.url} alt=""/> : '' }
+        </div>
+
+        <div className="card">
+          <button onClick={getImoogi}>
+            Imoogi api
+          </button>
+          <h4>
+            Response:
+          </h4>
+
+          <div className="response">
+            {imoogi ? imoogi.message : ''}
+          </div>
         </div>
       </div>
     </div>

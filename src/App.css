@@ -54,3 +54,10 @@
   display: flex;
   gap: 20px;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: black;
+    background-color: pink;
+  }
+}
