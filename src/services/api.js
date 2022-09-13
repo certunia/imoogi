@@ -6,12 +6,12 @@ const api = async (method, path, data) => {
     const _method = method.toUpperCase();
     const options = {
       // method: _method, // *GET, POST, PUT, DELETE, etc.
-      // mode: 'cors', // no-cors, *cors, same-origin
-      // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
       // credentials: 'include', // include, *same-origin, omit
-      // headers: {
-      //   'Content-Type': 'application/json',
-      // },
+      headers: {
+        'Content-Type': 'application/json',
+      },
     }
 
     if (data) {
