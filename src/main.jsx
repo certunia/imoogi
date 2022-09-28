@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
-import router from './services/router.jsx'
-import './index.css'
+import router from './router.jsx'
+import './styles/index.scss'
 
 import {
   useQuery,

@@ -1,6 +1,5 @@
 import { getImoogi } from './api/auth.js'
 import { useQuery } from '@tanstack/react-query'
-import './App.css'
 
 function App() {
   // const fetchCocktails = () => {
@@ -19,7 +18,6 @@ function App() {
 
   const fetchImoogi = () => {
     refetch();
-    console.log(imoogi);
   };
 
   return (
