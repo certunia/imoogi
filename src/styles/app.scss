@@ -11,3 +11,19 @@ a {
   color: #000;
   text-decoration: inherit;
 }
+
+.user-login {
+  align-items: center;
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 50px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.wrap {
+  max-width: 1238px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+}

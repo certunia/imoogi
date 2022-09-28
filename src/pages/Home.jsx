@@ -1,5 +1,7 @@
 import { getImoogi } from '../api/auth.js'
 import { useQuery } from '@tanstack/react-query'
+import Button from '@mui/material/Button';
+import UserLogin from '../components/blocks/UserLogin';
 
 function Home() {
   const { data: imoogi, refetch } = useQuery(['imoogi'], getImoogi, {
@@ -12,17 +14,23 @@ function Home() {
   };
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
+    <div className='home'>
+      <div className='home-header wrap'>
+        <a href="/">
           <img src="/logo.svg" alt="Imoogi logo" />
         </a>
+
+        <UserLogin />
       </div>
-      <div className="fields">
-        <div className="card">
-          <button onClick={fetchImoogi}>
+      <div className='home-first-block wrap'>
+        <div className='card'>
+          <Button
+            variant="contained"
+            onClick={fetchImoogi}
+          >
             Imoogi api
-          </button>
+          </Button>
+
           <h4>
             Response:
           </h4>
