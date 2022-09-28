@@ -1,57 +1,48 @@
-import { useState } from 'react'
-import api from './services/api.js'
+import { getImoogi } from './api/auth.js'
+import { useQuery } from '@tanstack/react-query'
 import './App.css'
 
 function App() {
-  const [cocktails, setCocktails] = useState([])
-  const [nasa, setNasa] = useState(null)
-  const [imoogi, setImoogi] = useState(null)
+  // const fetchCocktails = () => {
+  //   refetch();
+  // };
 
-  function getCocktails() {
-    api('get', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
-      .then(data => {
-        setCocktails(data.drinks);
-        console.log(cocktails);
-      });
-  }
+  // const { cocktails, refetch } = useQuery(["cocktails"], getCocktails, {
+  //   refetchOnWindowFocus: false,
+  //   enabled: false // disable this query from automatically running
+  // });
 
-  function getNasa() {
-    api('get', 'https://api.nasa.gov/planetary/apod?api_key=8QM0zVNIDDypMrk0hJtowNpwFalxPWnRU5EZ9cj0')
-      .then(data => {
-        setNasa(data);
-        console.log(data);
-      });
-  }
+  const { data: imoogi, refetch } = useQuery(['imoogi'], getImoogi, {
+    refetchOnWindowFocus: false,
+    enabled: false // disable this query from automatically running
+  });
 
-  function getImoogi() {
-    api('get', 'https://fastapi-production-b52e.up.railway.app/')
-      .then(data => {
-        setImoogi(data);
-        console.log(data);
-      });
-  }
+  const fetchImoogi = () => {
+    refetch();
+    console.log(imoogi);
+  };
 
   return (
     <div className="App">
       <div>
         <a href="https://vitejs.dev" target="_blank">
-          <img src="/logo.svg" className="logo" alt="Imoogi logo" />
+          <img src="/logo.svg" alt="Imoogi logo" />
         </a>
       </div>
       <div className="fields">
-        <div className="card">
-          <button onClick={getCocktails}>
+        {/*<div className="card">
+          <button onClick={fetchCocktails}>
             Cocktail api
           </button>
           <h4>
             Response:
           </h4>
           <ul className="response">
-            { cocktails?.map(el => <div>{el.idDrink}: {el.strDrink}</div> ) }
+            { cocktails?.drinks?.map(el => <div key={el.idDrink}>{el.idDrink}: {el.strDrink}</div> ) }
           </ul>
-        </div>
+        </div>*/}
 
-        <div className="card">
+        {/*<div className="card">
           <button onClick={getNasa}>
             Nasa api
           </button>
@@ -64,10 +55,10 @@ function App() {
           </div>
 
           { nasa ? <img className="response_img" src={nasa.url} alt=""/> : '' }
-        </div>
+        </div>*/}
 
         <div className="card">
-          <button onClick={getImoogi}>
+          <button onClick={fetchImoogi}>
             Imoogi api
           </button>
           <h4>
@@ -75,7 +66,7 @@ function App() {
           </h4>
 
           <div className="response">
-            {imoogi ? imoogi.message : ''}
+            { imoogi?.message }
           </div>
         </div>
       </div>
