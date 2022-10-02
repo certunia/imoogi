@@ -1,4 +1,5 @@
 // import { useQuery } from '@tanstack/react-query'
+import EmptyUser from '../icons/emptyUser'
 
 function UserLogin() {
   // const { data: imoogi, refetch } = useQuery(['imoogi'], getImoogi, {
@@ -11,10 +12,15 @@ function UserLogin() {
   // };
 
   return (
-    <div className='user-login'>
-      Login
-    </div>
+    <button className='user-login flex h-10 gap-2.5'>
+      <EmptyUser />
+
+      <span>
+        Login
+      </span>
+    </button>
   )
 }
 
 export default UserLogin
+
