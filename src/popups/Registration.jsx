@@ -6,8 +6,14 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import GoogleIcon from '../components/icons/Google'
 import FacebookIcon from '../components/icons/Facebook'
+import { toast } from 'react-toastify';
 
 function PopupLogin() {
+  const notify = () => {
+    console.log('asdf')
+    toast.error("Oh no, we don't have a backend yet!");
+  };
+
   return (
     <PopupBase title='Registration'>
       <div className='flex gap-5 items-stretch'>
@@ -20,6 +26,7 @@ function PopupLogin() {
             color='primary'
             endIcon={<ArrowForwardIosIcon />}
             size='large'
+            onClick={notify}
           >
             Continue
           </Button>
@@ -33,6 +40,7 @@ function PopupLogin() {
             color='primary'
             startIcon={<GoogleIcon />}
             size='large'
+            onClick={notify}
           >
             Google
           </Button>
@@ -43,6 +51,7 @@ function PopupLogin() {
             color='primary'
             startIcon={<FacebookIcon />}
             size='large'
+            onClick={notify}
           >
             Facebook
           </Button>
