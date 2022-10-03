@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import Button from '@mui/material/Button';
 import UserLogin from '../components/blocks/UserLogin';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Outlet, Link } from "react-router-dom";
 
 function Home() {
   const { data: imoogi, refetch } = useQuery(['imoogi'], getImoogi, {
@@ -24,7 +25,7 @@ function Home() {
         <UserLogin />
       </header>
       <div className='home-first-block wrap'>
-        <div className='flex flex-col'>
+        <div className='flex flex-col items-start'>
           <h1>
             Let’s share <br/>
             knowledge <br/>
@@ -40,6 +41,8 @@ function Home() {
             color='primary'
             endIcon={<ArrowForwardIosIcon />}
             size='large'
+            component={Link}
+            to="/login"
           >
             Start now
           </Button>
@@ -64,6 +67,8 @@ function Home() {
           { imoogi?.message }
         </div>
       </div>
+
+      <Outlet />
     </div>
   )
 }

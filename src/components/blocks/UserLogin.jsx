@@ -1,5 +1,7 @@
 // import { useQuery } from '@tanstack/react-query'
-import EmptyUser from '../icons/emptyUser'
+import EmptyUser from '../icons/EmptyUser'
+
+import { Link } from "react-router-dom";
 
 function UserLogin() {
   // const { data: imoogi, refetch } = useQuery(['imoogi'], getImoogi, {
@@ -12,13 +14,13 @@ function UserLogin() {
   // };
 
   return (
-    <button className='user-login flex h-10 gap-2.5'>
+    <Link to='/login' className='user-login flex h-10 gap-2.5'>
       <EmptyUser />
 
       <span>
         Login
       </span>
-    </button>
+    </Link>
   )
 }
 

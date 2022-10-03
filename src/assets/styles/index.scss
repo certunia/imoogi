@@ -1,9 +1,8 @@
-
-@import "normalize";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "normalize";
 @import "app";
 @import "home";
+@import "normalize";
+@import "popup";

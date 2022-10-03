@@ -2,7 +2,7 @@
 
 :root {
   color: #212121;
-  font-family: -apple-system, BlinkMacSystemFont, Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Poppins', Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -12,6 +12,18 @@ a {
   font-weight: 500;
   color: #000;
   text-decoration: inherit;
+}
+
+.form-one-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 290px;
+}
+
+.vertical-divider {
+  background-color: #D9D9D9;
+  width: 2px;
 }
 
 .user-login {
