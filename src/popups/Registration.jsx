@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import GoogleIcon from '../components/icons/Google'
 import FacebookIcon from '../components/icons/Facebook'
 import { toast } from 'react-toastify';
-import { ValidationGroup, Validate } from 'mui-validate';
+// import { ValidationGroup, Validate } from 'mui-validate';
 
 function PopupLogin() {
   const notify = () => {
