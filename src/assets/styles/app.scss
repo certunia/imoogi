@@ -14,11 +14,46 @@ a {
   text-decoration: inherit;
 }
 
+html, body {
+  background-color: #fff;
+}
+
 .form-one-column {
   display: flex;
   flex-direction: column;
   gap: 18px;
   width: 290px;
+}
+
+.header {
+  align-items: center;
+  border-bottom: 1px solid #000;
+  display: flex;
+  height: 74px;
+  justify-content: space-between;
+  margin: 0 40px;
+
+  &-divider {
+    background-color: #000;
+    height: 32px;
+    width: 1px;
+  }
+
+  &-left {
+    align-items: center;
+    display: flex;
+    gap: 40px
+  }
+
+  &-logo {
+    max-width: 120px;
+    width: 100%;
+  }
+
+  &-nav {
+    display: flex;
+    gap: 22px;
+  }
 }
 
 .vertical-divider {
@@ -37,7 +72,7 @@ a {
 }
 
 .wrap {
-  max-width: 1220px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 40px;
   width: 100%;

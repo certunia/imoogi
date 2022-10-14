@@ -1,4 +1,4 @@
-import { getImoogi } from './api/auth.js'
+import { getImoogi } from '../api/auth.js'
 import { useQuery } from '@tanstack/react-query'
 
 function App() {
