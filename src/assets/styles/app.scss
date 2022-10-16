@@ -18,11 +18,52 @@ html, body {
   background-color: #fff;
 }
 
+h1 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
 .form-one-column {
   display: flex;
   flex-direction: column;
   gap: 18px;
   width: 290px;
+}
+
+.float-toggle {
+  position: relative;
+
+  &__links {
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    align-items: center;
+    display: flex;
+    height: 34px;
+    padding: 0 15px;
+    z-index: 1;
+  }
+
+  .active {
+    color: #fff;
+  }
+
+  &__decor {
+    background-color: #000;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 36px;
+    position: absolute;
+    transition: all 0.3s;
+    width: 0;
+    z-index: 0;
+  }
 }
 
 .header {
@@ -54,6 +95,13 @@ html, body {
     display: flex;
     gap: 22px;
   }
+}
+
+.top-section {
+  align-items: center;
+  display: flex;
+  height: 108px;
+  justify-content: space-between;
 }
 
 .vertical-divider {

@@ -4,6 +4,8 @@ import PopupLogin from './popups/Login'
 import PopupRegistration from './popups/Registration'
 
 import Trainbooks from './pages/Trainbooks'
+import Statistics from './pages/Statistics'
+import Users from './pages/Users'
 
 import { createBrowserRouter } from 'react-router-dom';
 
@@ -25,14 +27,38 @@ const router = createBrowserRouter([
   {
     path: "/trainbooks",
     element: <Trainbooks />,
+    children: [
+      {
+        path: "/trainbooks/saved",
+      },
+      {
+        path: "/trainbooks/my",
+      }
+    ]
   },
   {
     path: "/users",
-    element: <Trainbooks />,
+    element: <Users />,
+    children: [
+      {
+        path: "/users/favorites",
+      },
+      {
+        path: "/users/my",
+      }
+    ]
   },
   {
     path: "/statistics",
-    element: <Trainbooks />,
+    element: <Statistics />,
+    children: [
+      {
+        path: "/statistics/favorites",
+      },
+      {
+        path: "/statistics/my",
+      }
+    ]
   },
 ]);
 

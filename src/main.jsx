@@ -17,7 +17,6 @@ import {
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
@@ -33,5 +32,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         />
       </QueryClientProvider>
     </ThemeProvider>
-  </React.StrictMode>
 )
