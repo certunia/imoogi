@@ -53,7 +53,7 @@ function Home() {
 
       <div className='card'>
         <Button
-          variant="contained"
+          variant='contained'
           onClick={fetchImoogi}
         >
           Imoogi api

@@ -47,31 +47,31 @@ function PopupLogin() {
         </ValidationGroup>
         <div className='vertical-divider' />
         <div className='flex flex-col gap-5'>
-        Log in using:
-        <Button
-          sx={{ borderRadius: 50, height: 49, fontSize: 18, textTransform: 'none' }}
-          variant='outlined'
-          color='primary'
-          startIcon={<GoogleIcon />}
-          size='large'
-          onClick={notify}
-        >
-          Google
-        </Button>
+          Log in using:
+          <Button
+            sx={{ borderRadius: 50, height: 49, fontSize: 18, textTransform: 'none' }}
+            variant='outlined'
+            color='primary'
+            startIcon={<GoogleIcon />}
+            size='large'
+            onClick={notify}
+          >
+            Google
+          </Button>
 
-        <Button
-          sx={{ borderRadius: 50, height: 49, fontSize: 18, textTransform: 'none' }}
-          variant='outlined'
-          color='primary'
-          startIcon={<FacebookIcon />}
-          size='large'
-          onClick={notify}
-        >
-          Facebook
-        </Button>
-        Don’t have an account?
-        <Link to='/registration'>Create new account</Link>
-      </div>
+          <Button
+            sx={{ borderRadius: 50, height: 49, fontSize: 18, textTransform: 'none' }}
+            variant='outlined'
+            color='primary'
+            startIcon={<FacebookIcon />}
+            size='large'
+            onClick={notify}
+          >
+            Facebook
+          </Button>
+          Don’t have an account?
+          <Link to='/registration'>Create new account</Link>
+        </div>
       </div>
     </PopupBase>
   )

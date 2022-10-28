@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './pages/Home'
 import PopupLogin from './popups/Login'
+import PopupProfile from './popups/Profile'
 import PopupRegistration from './popups/Registration'
 
 import Trainbooks from './pages/Trainbooks'
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
       {
         path: "/registration",
         element: <PopupRegistration />,
-      }
+      },
+      {
+        path: "/profile-fill",
+        element: <PopupProfile />,
+      },
     ]
   },
   {

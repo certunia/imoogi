@@ -30,6 +30,12 @@ h1 {
   width: 290px;
 }
 
+.form-two-columns {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+}
+
 .float-toggle {
   position: relative;
 
@@ -117,6 +123,52 @@ h1 {
   display: flex;
   min-width: 120px;
   padding: 6px;
+}
+
+.more-btn {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: '';
+    display: block;
+    background-color: #D9D9D9;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  div {
+    background-color: #fff;
+    padding: 0 5px;
+  }
+
+  input {
+    position: absolute;
+    left: -999999px;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  span {
+    border-radius: 50px;
+    background-color: #fff;
+    transition: 0.3s all;
+    padding: 10px 5px;
+  }
+
+  input:checked ~ span {
+    transform: rotate(-180deg);
+  }
 }
 
 .wrap {
