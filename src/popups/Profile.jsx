@@ -26,7 +26,8 @@ function PopupLogin() {
       <div className='flex gap-5'>
         <ValidationGroup>
           <FormControl className='form-two-columns w-full items-center'>
-            <div className='flex justify-items-center items-center gap-4'>
+            <label className='avatar-upload flex justify-items-center items-center gap-4'>
+              <input type='file'/>
               <AvatarIcon />
               <span>
                 <h3 className='text-lg'>Upload your avatar</h3>
@@ -38,11 +39,10 @@ function PopupLogin() {
                 color='primary'
                 endIcon={<ArrowForwardIosIcon />}
                 size='large'
-                onClick={notify}
               >
                 Choose file
               </Button>
-            </div>
+            </label>
             <div className='flex w-full justify-between gap-3'>
               <Validate
                 classes={{root: 'w-full'}}
@@ -52,8 +52,8 @@ function PopupLogin() {
               >
                 <TextField
                   id='login-email'
-                  type='email'
-                  label='email'
+                  type='text'
+                  label='name'
                   variant='outlined'
                   size='small'
                   autoFocus={true}
@@ -63,10 +63,10 @@ function PopupLogin() {
               <Validate name='internal key 2'>
                 <TextField
                   id='login-password'
-                  label='password'
+                  type='text'
+                  label='surname'
                   variant='outlined'
                   size='small'
-                  type='password'
                   fullWidth
                 />
               </Validate>
@@ -98,10 +98,9 @@ function PopupLogin() {
                     initialValidation='silent'
                   >
                     <FormControl fullWidth size="small">
-                      <InputLabel id="login-email">Age</InputLabel>
+                      <InputLabel>Status</InputLabel>
                       <Select
-                        id='login-email'
-                        type='email'
+                        id='status'
                         label='email'
                         variant='outlined'
                         size='small'
@@ -148,8 +147,17 @@ function PopupLogin() {
                 </div>
 
                 <div className='flex w-full'>
-                  <Multiselect></Multiselect>
+                  <Multiselect title='Interests' />
                 </div>
+
+                <TextField
+                  id="outlined-textarea"
+                  label="Self description"
+                  placeholder="Placeholder"
+                  minRows={2}
+                  multiline
+                  fullWidth
+                />
               </>
             }
 

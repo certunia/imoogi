@@ -23,6 +23,18 @@ h1 {
   font-weight: 500;
 }
 
+.avatar-upload {
+  position: relative;
+
+  input {
+    position: absolute;
+    left: -999999px;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
 .form-one-column {
   display: flex;
   flex-direction: column;
