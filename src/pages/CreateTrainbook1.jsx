@@ -5,21 +5,28 @@ import Button from '@mui/material/Button';
 
 import Grid from "@mui/material/Grid";
 import {Link} from "react-router-dom";
-import AddIcon from '@mui/icons-material/Add';
 import FormControl from "@mui/material/FormControl";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 function Trainbooks(props) {
   const menuItems = [
-    {to: '/trainbooks', title: 'all'},
-    {to: '/trainbooks/saved', title: 'saved'},
-    {to: '/trainbooks/my', title: 'my'},
+    {to: '/trainbooks', title: 'public'},
+    {to: '/trainbooks/saved', title: 'private'},
   ]
 
   return (
     <MainLayout
-      title='Trainbooks'
-      topRight={<FloatToggle items={menuItems}/>}
+      title='Create a new trainbook'
+      topRight={
+        <Button
+          endIcon={<ArrowForwardIosIcon />}
+          Continue
+          component={Link}
+          to="/login"
+        >
+          Continue
+        </Button>
+      }
     >
       <div className='trainbooks'>
         <Grid container spacing={2}>
@@ -32,18 +39,18 @@ function Trainbooks(props) {
         </Grid>
       </div>
 
-      <Button
-        sx={{ borderRadius: 50, height: 49, width: 234, fontSize: 18, textTransform: 'none', bottom: 60, right: 20, position: 'fixed' }}
-        variant='contained'
-        color='primary'
-        size='large'
-        endIcon={<AddIcon />}
-        className='fixed-btn'
-        component={Link}
-        to="/trainbooks/create/info"
-      >
-        Add new
-      </Button>
+      {/*<Button*/}
+      {/*  sx={{ borderRadius: 50, height: 49, width: 234, fontSize: 18, textTransform: 'none', bottom: 60, right: 20, position: 'fixed' }}*/}
+      {/*  variant='contained'*/}
+      {/*  color='primary'*/}
+      {/*  size='large'*/}
+      {/*  endIcon={<AddIcon />}*/}
+      {/*  className='fixed-btn'*/}
+      {/*  component={Link}*/}
+      {/*  to="/login"*/}
+      {/*>*/}
+      {/*  Add new*/}
+      {/*</Button>*/}
     </MainLayout>
   )
 }

@@ -1,35 +1,21 @@
 import MainLayout from '../components/layouts/Main';
-import FloatToggle from '../components/ui/FloatToggle';
+import Richtext from '../components/ui/Richtext/Richtext';
 import Trainbook from '../components/blocks/Trainbook';
 import Button from '@mui/material/Button';
 
-import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
 import {Link} from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
 import FormControl from "@mui/material/FormControl";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 function Trainbooks(props) {
-  const menuItems = [
-    {to: '/trainbooks', title: 'all'},
-    {to: '/trainbooks/saved', title: 'saved'},
-    {to: '/trainbooks/my', title: 'my'},
-  ]
-
   return (
-    <MainLayout
-      title='Trainbooks'
-      topRight={<FloatToggle items={menuItems}/>}
-    >
+    <MainLayout title='Some title'>
       <div className='trainbooks'>
-        <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <Trainbook />
-          </Grid>
-          <Grid item xs={6}>
-            <Trainbook />
-          </Grid>
-        </Grid>
+        <Stack>
+          <Richtext />
+        </Stack>
       </div>
 
       <Button
@@ -40,7 +26,7 @@ function Trainbooks(props) {
         endIcon={<AddIcon />}
         className='fixed-btn'
         component={Link}
-        to="/trainbooks/create/info"
+        to="/login"
       >
         Add new
       </Button>
@@ -48,4 +34,4 @@ function Trainbooks(props) {
   )
 }
 
-export default Trainbooks
+export default Trainbooks;

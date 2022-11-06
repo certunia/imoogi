@@ -5,6 +5,8 @@ import PopupProfile from './popups/Profile'
 import PopupRegistration from './popups/Registration'
 
 import Trainbooks from './pages/Trainbooks'
+import CreateTrainbook1 from './pages/CreateTrainbook1'
+import CreateTrainbook2 from './pages/CreateTrainbook2'
 import Statistics from './pages/Statistics'
 import Users from './pages/Users'
 
@@ -38,8 +40,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/trainbooks/my",
-      }
+      },
     ]
+  },
+  {
+    path: "/trainbooks/create/info",
+    element: <CreateTrainbook1 />,
+  },
+  {
+    path: "/trainbooks/create/material",
+    element: <CreateTrainbook2 />,
   },
   {
     path: "/users",
