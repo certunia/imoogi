@@ -13,11 +13,12 @@ import {
 import useTable from "../utils/useTable.js";
 import defaultToolbarGroups from "./toolbarGroups.js";
 import "./styles.css";
-// import ColorPicker from "../Elements/Color Picker/ColorPicker";
+import ColorPicker from "../Elements/ColorPicker/ColorPicker";
 import LinkButton from "../Elements/Link/LinkButton";
 import Embed from "../Elements/Embed/Embed";
-// import Table from "../Elements/Table/Table";
-// import InTable from "../Elements/Table/InTable";
+import Table from "../Elements/Table/Table";
+import InTable from "../Elements/Table/InTable";
+
 const Toolbar = () => {
   const editor = useSlate();
   const isTable = useTable(editor);
@@ -84,11 +85,11 @@ const Toolbar = () => {
   return (
     <div className="toolbar">
       {toolbarGroups.map((group, index) => (
-        <span key={index} className="toolbar-grp">
+        <span key={index} className={'toolbar-grp ' + index}>
           {group.map((element) => {
             switch (element.type) {
               case "block":
-                return <BlockButton key={element.id} {...element} />;
+                return <span key={element.id} className={'xxx' + element.id}><BlockButton {...element} /></span>;
               case "mark":
                 return <MarkButton key={element.id} {...element} />;
               case "dropdown":
@@ -101,31 +102,31 @@ const Toolbar = () => {
                     editor={editor}
                   />
                 );
-              // case "embed":
-              //   return (
-              //     <Embed
-              //       key={element.id}
-              //       format={element.format}
-              //       editor={editor}
-              //     />
-              //   );
-              // case "color-picker":
-              //   return (
-              //     <ColorPicker
-              //       key={element.id}
-              //       activeMark={activeMark}
-              //       format={element.format}
-              //       editor={editor}
-              //     />
-              //   );
-              // case "table":
-              //   return <Table key={element.id} editor={editor} />;
-              // case "inTable":
-                // return isTable ? (
-                  // <InTable key={element.id} editor={editor} />
-                // ) : null;
+              case "embed":
+                return (
+                  <Embed
+                    key={element.id}
+                    format={element.format}
+                    editor={editor}
+                  />
+                );
+              case "color-picker":
+                return (
+                  <ColorPicker
+                    key={element.id}
+                    activeMark={activeMark}
+                    format={element.format}
+                    editor={editor}
+                  />
+                );
+              case "table":
+                return <Table key={element.id} editor={editor} />;
+              case "inTable":
+                return isTable ? (
+                  <InTable key={element.id} editor={editor} />
+                ) : null;
               default:
-                return <button>Invalid Button</button>;
+                return <button key={element.id}>Invalid Button</button>;
             }
           })}
         </span>
