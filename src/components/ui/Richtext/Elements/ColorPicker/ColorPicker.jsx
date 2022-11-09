@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
-// import { MdFormatColorText, MdFormatColorFill, MdCheck } from "react-icons/md";
+import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
+import FormatColorFillIcon from '@mui/icons-material/FormatColorFill';
+import CheckIcon from '@mui/icons-material/Check';
 import "./ColorPicker.css";
 import { colors } from "./defaultColors.js";
 import { addMarkData, activeMark } from "../../utils/SlateUtilityFunctions.js";
@@ -8,10 +10,8 @@ import usePopup from "../../utils/usePopup";
 import { ReactEditor } from "slate-react";
 
 const logo = {
-  color: <div />,
-  // color: <MdFormatColorText size={20} />,
-  bgColor: <div />
-  // bgColor: <MdFormatColorFill size={20} />
+  color: <FormatColorTextIcon size={20} />,
+  bgColor: <FormatColorFillIcon size={20} />
 };
 const ColorPicker = ({ format, editor }) => {
   const [selection, setSelection] = useState();
@@ -100,7 +100,7 @@ const ColorPicker = ({ format, editor }) => {
               }}
             />
             <button style={{ color: validHex ? "green" : "" }} type={"submit"}>
-              {/*<MdCheck size={20} />*/}
+              <CheckIcon size={20} />
             </button>
           </form>
         </div>
