@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 
 import EmojiPicker from 'emoji-picker-react';
 import {Link} from "react-router-dom";
+import React, { useState } from 'react';
 import FormControl from "@mui/material/FormControl";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import {Validate} from "mui-validate";
@@ -14,6 +15,23 @@ function Trainbooks(props) {
     {title: 'public'},
     {title: 'private'},
   ]
+
+  const [chosenEmoji, setChosenEmoji] = useState(null);
+
+  const onEmojiClick = (emojiObject) => {
+    console.log(emojiObject)
+    setChosenEmoji(emojiObject);
+  };
+
+  const EmojiData = ({ chosenEmoji }) => (
+    <div>
+      <strong>Unified:</strong> {chosenEmoji.unified}
+      <br />
+      <strong>Symbol:</strong> {chosenEmoji.emoji}
+      <br />
+      <strong>ActiveSkinTone:</strong> {chosenEmoji.activeSkinTone}
+    </div>
+  );
 
   return (
     <MainLayout
@@ -31,7 +49,8 @@ function Trainbooks(props) {
     >
       <div className='create-trainbook flex'>
         <div>
-          <EmojiPicker />
+          <EmojiPicker onEmojiClick={onEmojiClick}/>
+          {chosenEmoji && <EmojiData chosenEmoji={chosenEmoji} />}
         </div>
         <Validate
           classes={{root: 'w-full'}}

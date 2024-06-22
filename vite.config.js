@@ -11,9 +11,9 @@ export default () => {
     plugins: [
       react(),
     ],
-    // server: {
-    //   port: port,
+    server: {
+      port: 5500,
     //   https: true
-    // },
+    },
   });
 }
